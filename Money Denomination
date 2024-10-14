@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int main () {
+
+    int thousands=0;
+    int fivehundreds=0;
+    int hundreds=0;
+    int fifties=0;
+    int twenties=0;
+    int tens=0;
+    int fives=0;
+    int ones=0;
+    int CashOnHand=0;
+    char Name[80];
+
+    printf("Enter your name please:  ");
+    scanf("%s", Name);
+    printf("Enter the amount of cash on hand:  ");
+    scanf("%d", &CashOnHand);
+
+    thousands=CashOnHand/1000;
+    CashOnHand%=1000;
+
+    fivehundreds = CashOnHand / 500;
+    CashOnHand %= 500;
+
+    hundreds = CashOnHand / 100;
+    CashOnHand %= 100;
+
+    fifties = CashOnHand / 50;
+    CashOnHand %= 50;
+
+    twenties = CashOnHand / 20;
+    CashOnHand %= 20;
+
+    tens = CashOnHand / 10;
+    CashOnHand %= 10;
+
+    fives = CashOnHand / 5;
+    CashOnHand %= 5;
+
+    ones = CashOnHand;
+
+    printf("Hello %s" "\n Thousands: %d\n \nFive Hundreds: %d\nHundreds: %d\nFifties: %d\nTwenties: %d\nTens: %d\nFives: %d\nOnes: %d\n1000-%d\n",
+       Name, thousands, fivehundreds, hundreds, fifties, twenties, tens, fives, ones, thousands);
+
+    return 0;
+}
