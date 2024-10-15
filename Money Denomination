@@ -41,7 +41,7 @@ int main () {
 
     ones = CashOnHand;
 
-    printf("Hello %s" "\n Thousands: %d\n \nFive Hundreds: %d\nHundreds: %d\nFifties: %d\nTwenties: %d\nTens: %d\nFives: %d\nOnes: %d\n1000-%d\n",
+    printf("Hello %s, the total denomonination of your money is" "\n Thousands: %d\nFive Hundreds: %d\nHundreds: %d\nFifties: %d\nTwenties: %d\nTens: %d\nFives: %d\nOnes: %d\n1000-%d\n",
        Name, thousands, fivehundreds, hundreds, fifties, twenties, tens, fives, ones, thousands);
 
     return 0;
