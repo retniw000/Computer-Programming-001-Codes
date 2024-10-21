@@ -1,0 +1,83 @@
+#include <stdio.h>
+
+int main () {
+
+    int thousands = 0;
+    int fivehundreds = 0;
+    int hundreds = 0;
+    int fifties = 0;
+    int twenties = 0;
+    int tens = 0;
+    int fives = 0;
+    int ones = 0;
+    int CashOnHand = 0;
+    char Name[80];
+
+    printf("Enter your name please:  ");
+    scanf("%s", Name);
+    printf("Enter the amount of cash on hand:  ");
+    scanf("%d", &CashOnHand);
+    
+   
+    
+    if (CashOnHand >= 1000) {
+       thousands = CashOnHand / 1000;
+       CashOnHand %= 1000;
+    } else {
+       thousands = 0;
+    }
+
+    if (CashOnHand >= 500) {
+       fivehundreds = CashOnHand / 500;
+       CashOnHand %= 500;
+    } else {
+       fivehundreds = 0;
+    }
+
+    if (CashOnHand >= 100) {
+       hundreds = CashOnHand / 100;
+       CashOnHand %= 100;
+    } else {
+       hundreds =0;
+    }
+
+    if (CashOnHand >= 50) {
+       fifties = CashOnHand / 50;
+       CashOnHand %= 50;
+    } else {
+      fifties = 0;
+    }
+
+    if (CashOnHand >= 20) {
+       twenties = CashOnHand / 20;
+       CashOnHand %= 20;
+    } else {
+      twenties = 0;
+    }
+
+    if (CashOnHand >= 10) {
+       tens = CashOnHand / 10;
+       CashOnHand %= 10;
+    } else {
+      tens = 0;
+    }
+
+    if (CashOnHand >= 5) {
+       fives = CashOnHand / 5;
+       CashOnHand %= 5;
+    } else {
+       fives = 0;
+    }
+
+    ones = CashOnHand;
+    if (ones > 0) {
+       printf("Ones: %d\n", ones);
+    } else {
+       ones = 0;
+    }
+printf("Hello %s, the total denomonination of your money is" "\nThousands: %d\nFive Hundreds: %d\nHundreds: %d\nFifties: %d\nTwenties: %d\nTens: %d\nFives: %d\nOnes: %d\n",
+       Name, thousands, fivehundreds, hundreds, fifties, twenties, tens, fives, ones, thousands);
+  
+    system ("pause");
+    return 0;
+}
