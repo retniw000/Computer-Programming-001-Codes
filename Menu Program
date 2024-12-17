@@ -1,0 +1,88 @@
+#include <stdio.h>
+
+int main() {
+    int a;
+    int n1, n2, n3, sumx2;
+    char name[80];
+    int ageIn;
+    int result;
+    char gender;
+    char bruh;
+   do {
+        printf("\nMenu Program:\n");
+        printf("\t1. Smiley\n");
+        printf("\t2. Plato\n");
+        printf("\t3. Seconds\n");
+        printf("\t4. Exit\n");
+        printf("\nEnter the number of the program you want to execute: ");
+        scanf("%d", &a);
+
+        if (a == 1) {
+            printf("\nPlease enter your name:\n");
+            scanf("%s", name);
+            printf("Please enter a number:\n");
+            scanf("%d", &n1);
+            printf("Please enter a second number:\n");
+            scanf("%d", &n2);
+            printf("Please enter a third number:\n");
+            scanf("%d", &n3);
+            sumx2 = (n1 + n2 + n3) * 2;
+            printf("\n%s, twice the sum of your numbers %d, %d, %d is %d :):):)\n", name, n1, n2, n3, sumx2);
+        } 
+        else if (a == 2) {
+            printf("\nPlease input your age:\n");
+            scanf("%d", &ageIn);
+            printf("Please input your gender (M/F):\n");
+            scanf(" %c", &gender);
+
+            if (gender == 'm' || gender == 'M') {
+                result = ageIn / 2 + 7;
+                printf("\nYour ideal partner's age is: %d years old\n", result);
+            } else if (gender == 'f' || gender == 'F') {
+                result = (ageIn - 7) * 2;
+                printf("\nYour ideal partner's age is: %d years old\n", result);
+            } else {
+                printf("\nInvalid gender input. Please enter M or F.\n");
+            }
+        } 
+        else if (a == 3) {
+            int ninput, sec, min, hour;
+            printf("\nPlease enter your name:\n");
+            scanf("%s", name);
+            printf("Enter seconds:\n");
+            scanf("%d", &ninput);
+
+            hour = ninput / 3600;
+            min = (ninput % 3600) / 60;
+            sec = ninput % 60;
+
+            printf("\n%s, you entered %d seconds:\n", name, ninput);
+            printf("Time: %02d:%02d:%02d (HH:MM:SS)\n", hour, min, sec);
+        } 
+        else if (a == 4) {
+            printf("\nExiting program.\n");
+        } 
+        else {
+            printf("\nInvalid option. Please choose a valid menu option.\n");
+        }
+
+    } while (a != 4);
+
+    do {
+        printf("Are you sure? (y/n): ");
+        scanf(" %c", &bruh); // Added a space before %c to consume any leftover newline character
+
+        if (bruh == 'y' || bruh == 'Y') {
+            printf("Are you really sure? (y/n): ");
+            scanf(" %c", &bruh);
+
+            if (bruh == 'y' || bruh == 'Y') {
+                printf("Program ended.\n");
+                return 0; // Exit the program immediately
+            }
+        }
+    } while (bruh == 'y' || bruh == 'Y');
+
+    printf("Program ended.\n");
+    return 0;
+}
