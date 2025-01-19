@@ -3,29 +3,86 @@
 int main() {
     int day, month;
 
-    printf("Enter Day of Birth:\n");
+    // Input from the user
+    printf("Enter Day of Birth (1-31):\n");
     scanf("%d", &day);
-    printf("Enter Month of Birth:\n");
+    printf("Enter Month of Birth (1-12):\n");
     scanf("%d", &month);
 
+    // Input validation
+    if (month < 1 || month > 12) {
+        printf("Invalid month! Please enter a value between 1 and 12.\n");
+        return 1;
+    }
+    if (day < 1 || day > 31) {
+        printf("Invalid day! Please enter a value between 1 and 31.\n");
+        return 1;
+    }
+
     // Zodiac determination
-    if (month == 1) {
+    if (month == 1) { // January
         if (day <= 19)
             printf("Capricorn\n");
         else if (day >= 20)
             printf("Aquarius\n");
-    } else if (month == 2) {
+    } else if (month == 2) { // February
         if (day <= 18)
             printf("Aquarius\n");
-        else if (day >= 19)
+        else if (day >= 19 && day <= 29) // Leap year not handled
             printf("Pisces\n");
-    } else if (month == 4) { // Example for April
+    } else if (month == 3) { // March
+        if (day <= 20)
+            printf("Pisces\n");
+        else if (day >= 21)
+            printf("Aries\n");
+    } else if (month == 4) { // April
         if (day <= 19)
             printf("Aries\n");
-        else if (day >= 20)
+        else if (day >= 20 && day <= 30)
             printf("Taurus\n");
+    } else if (month == 5) { // May
+        if (day <= 20)
+            printf("Taurus\n");
+        else if (day >= 21)
+            printf("Gemini\n");
+    } else if (month == 6) { // June
+        if (day <= 20)
+            printf("Gemini\n");
+        else if (day >= 21 && day <= 30)
+            printf("Cancer\n");
+    } else if (month == 7) { // July
+        if (day <= 22)
+            printf("Cancer\n");
+        else if (day >= 23)
+            printf("Leo\n");
+    } else if (month == 8) { // August
+        if (day <= 22)
+            printf("Leo\n");
+        else if (day >= 23)
+            printf("Virgo\n");
+    } else if (month == 9) { // September
+        if (day <= 22)
+            printf("Virgo\n");
+        else if (day >= 23 && day <= 30)
+            printf("Libra\n");
+    } else if (month == 10) { // October
+        if (day <= 22)
+            printf("Libra\n");
+        else if (day >= 23)
+            printf("Scorpio\n");
+    } else if (month == 11) { // November
+        if (day <= 21)
+            printf("Scorpio\n");
+        else if (day >= 22 && day <= 30)
+            printf("Sagittarius\n");
+    } else if (month == 12) { // December
+        if (day <= 21)
+            printf("Sagittarius\n");
+        else if (day >= 22)
+            printf("Capricorn\n");
+    } else {
+        printf("Invalid input!\n");
     }
-    // Additional months go here...
 
     return 0;
 }
