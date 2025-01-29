@@ -1,33 +1,40 @@
 #include <stdio.h>
 
-void Floydstriangle(int rows) {
-    int num = 1;  
+void Floydstriangle(int rows) { //function prototype
+
+// start ng function definition
+    int num = 1;  //since automatic na 1 naman na agad first value na ipiprint, declared na 1 na agad value ng variable num
     for (int i = 1; i <= rows; i++) { //code para sa rows
         for (int j = 1; j <= i; j++) {  //code para sa print ng numbers
             printf("%d", num);
-            if (num == 1) {
-                --num; 
+            if (num == 1) { // need alternating ang 1 and 0 kaya ganto code
+                --num; // if 1 na ang value nung variable num mag dedecrement para maging 0
             } else {
-                ++num;  
+                ++num;  // if 0 naman na value mag iincrement para maging 1
             }
-            
+
         }
-        printf("\n");  
+        printf("\n");
     }
-}
+}// end ng function definition
+
 
 int main() {
     int rows;
-    
+    char name[80];
+
+    printf("Enter your name:\n");
+    scanf("%s", name);
+
     printf("Enter how many rows: ");
     scanf("%d", &rows);
-    
+
     if (rows <= 0) {
         printf("Invalid input. Please enter a positive integer.\n");
     } else {
-        printf("Floyd's Triangle:\n");
-        Floydstriangle (rows);
+        printf("%s, This is your Floyd's Triangle:\n", name);
+        Floydstriangle (rows); //function call
     }
-    
+
     return 0;
 }
