@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+void Floydstriangle(int rows) {
+    int num = 1;  
+    for (int i = 1; i <= rows; i++) { //code para sa rows
+        for (int j = 1; j <= i; j++) {  //code para sa print ng numbers
+            printf("%d", num);
+            if (num == 1) {
+                --num; 
+            } else {
+                ++num;  
+            }
+            
+        }
+        printf("\n");  
+    }
+}
+
+int main() {
+    int rows;
+    
+    printf("Enter how many rows: ");
+    scanf("%d", &rows);
+    
+    if (rows <= 0) {
+        printf("Invalid input. Please enter a positive integer.\n");
+    } else {
+        printf("Floyd's Triangle:\n");
+        Floydstriangle (rows);
+    }
+    
+    return 0;
+}
