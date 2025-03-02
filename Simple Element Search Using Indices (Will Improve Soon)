@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+
+int main(){
+    int arr[2][5];
+    int a,b;
+    int c,d;
+
+printf("Enter values for your array: \n");
+    for (a=0;a<2;a++){
+        for (b=0;b<5;b++)
+            scanf("%d", &arr[a][b]);
+    }
+
+
+ printf("Enter the index to access your an element: \n ");
+ printf("Rows: ");
+ scanf("%d",&c);
+ printf("Columns: ");
+ scanf("%d",&d);
+
+ printf("%d",arr[c][d] );
+    return 0;
+}
