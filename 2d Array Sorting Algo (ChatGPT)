@@ -1,0 +1,136 @@
+//Selection Sort
+#include <stdio.h>
+
+void selectionSort2D(int arr[][3], int rows, int cols) {
+    for (int i = 0; i < rows * cols - 1; i++) {
+        int minIndex = i;
+        
+        for (int j = i + 1; j < rows * cols; j++) {
+            int minRow = minIndex / cols, minCol = minIndex % cols;
+            int curRow = j / cols, curCol = j % cols;
+            
+            if (arr[curRow][curCol] < arr[minRow][minCol])
+                minIndex = j;
+        }
+        
+        // Swap elements
+        int row1 = i / cols, col1 = i % cols;
+        int row2 = minIndex / cols, col2 = minIndex % cols;
+        int temp = arr[row1][col1];
+        arr[row1][col1] = arr[row2][col2];
+        arr[row2][col2] = temp;
+    }
+}
+
+void printArray(int arr[][3], int rows, int cols) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++)
+            printf("%d ", arr[i][j]);
+        printf("\n");
+    }
+}
+
+int main() {
+    int rows = 2, cols = 3;
+    int arr[2][3] = {{5, 3, 8}, {4, 1, 6}};
+
+    printf("Original Array:\n");
+    printArray(arr, rows, cols);
+
+    selectionSort2D(arr, rows, cols);
+
+    printf("\nSorted Array (Selection Sort):\n");
+    printArray(arr, rows, cols);
+
+    return 0;
+}
+
+//Bubble Sort
+
+#include <stdio.h>
+
+void bubbleSort2D(int arr[][3], int rows, int cols) {
+    int temp;
+    for (int i = 0; i < rows * cols - 1; i++) {
+        for (int j = 0; j < rows * cols - i - 1; j++) {
+            int row1 = j / cols, col1 = j % cols;
+            int row2 = (j + 1) / cols, col2 = (j + 1) % cols;
+            
+            if (arr[row1][col1] > arr[row2][col2]) {
+                temp = arr[row1][col1];
+                arr[row1][col1] = arr[row2][col2];
+                arr[row2][col2] = temp;
+            }
+        }
+    }
+}
+
+void printArray(int arr[][3], int rows, int cols) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++)
+            printf("%d ", arr[i][j]);
+        printf("\n");
+    }
+}
+
+int main() {
+    int rows = 2, cols = 3;
+    int arr[2][3] = {{5, 3, 8}, {4, 1, 6}};
+
+    printf("Original Array:\n");
+    printArray(arr, rows, cols);
+
+    bubbleSort2D(arr, rows, cols);
+
+    printf("\nSorted Array (Bubble Sort):\n");
+    printArray(arr, rows, cols);
+
+    return 0;
+}
+
+
+//Insertion Sort
+#include <stdio.h>
+
+void insertionSort2D(int arr[][3], int rows, int cols) {
+    for (int i = 1; i < rows * cols; i++) {
+        int keyRow = i / cols, keyCol = i % cols;
+        int key = arr[keyRow][keyCol];
+        int j = i - 1;
+        
+        while (j >= 0) {
+            int prevRow = j / cols, prevCol = j % cols;
+            if (arr[prevRow][prevCol] > key) {
+                arr[(j + 1) / cols][(j + 1) % cols] = arr[prevRow][prevCol];
+            } else {
+                break;
+            }
+            j--;
+        }
+        
+        arr[(j + 1) / cols][(j + 1) % cols] = key;
+    }
+}
+
+void printArray(int arr[][3], int rows, int cols) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++)
+            printf("%d ", arr[i][j]);
+        printf("\n");
+    }
+}
+
+int main() {
+    int rows = 2, cols = 3;
+    int arr[2][3] = {{5, 3, 8}, {4, 1, 6}};
+
+    printf("Original Array:\n");
+    printArray(arr, rows, cols);
+
+    insertionSort2D(arr, rows, cols);
+
+    printf("\nSorted Array (Insertion Sort):\n");
+    printArray(arr, rows, cols);
+
+    return 0;
+}
