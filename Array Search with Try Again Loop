@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int main() {
+  int x[2][3], a, b, n, bruh;
+  char d;
+  do {
+    printf("Enter value for array\n");
+    for (a = 0; a < 2; a++) {
+      for (b = 0; b < 3; b++) {
+        if (scanf("%d", & x[a][b]) != 1) {
+          printf("Invalid Input \n");
+          system("pause");
+          return 0;
+        };
+      }
+    }
+    do {
+      printf("Enter what number to find\n");
+      if (scanf("%d", & n) != 1) {
+        printf("Invalid Input \n");
+        system("pause");
+        return 0;
+      };;
+      {
+        for (a = 0; a < 2; a++) {
+          for (b = 0; b < 3; b++) {
+            if (x[a][b] == n)
+              printf("Element found at x[%d][%d]: ", a, b);
+            bruh = 1;
+
+          }
+
+        }
+        if (bruh != 1) printf("Element not found");
+
+        printf("\nDo you want to find an element again? y/n \n");
+        scanf("%s", & d);
+      }
+
+    } while (d == 'y');
+
+    printf("\nDo you want to enter a new array? y/n \n");
+    scanf("%s", & d);
+
+  } while (d == 'y');
+  return 0;
+  system("pause");
+}
