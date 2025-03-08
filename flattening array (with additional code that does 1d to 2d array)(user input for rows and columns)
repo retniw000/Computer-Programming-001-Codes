@@ -49,7 +49,23 @@ printf("Here is the value for your 2d arrays:\n");
  for (a=0;a<(rows*cols); a++){
      printf("%d ", onediarray[a]);
  }
-         
+printf("\n");
+c = 0;
+printf("Here is your 2d array again:\n");
+    for (a=0;a<rows;a++){
+        for (b=0;b<cols;b++){
+            array[a][b] = onediarray[c++];
+        }
+    }
+
+ for (a=0;a<rows;a++){
+     for (b=0;b<cols;b++){
+         printf("%d ", array[a][b]);
+         printf("\t");
+ }
+    printf("\n");
+ }
+    
          
     return 0;
 }
