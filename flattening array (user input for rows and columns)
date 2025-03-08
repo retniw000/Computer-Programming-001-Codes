@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+
+int main(){
+int rows, cols,a,b;
+int c = 0;
+
+
+    
+printf("Rows: \n");
+scanf("%d", &rows);
+
+printf("Columns: \n");
+scanf("%d", &cols);
+
+int array[rows][cols];
+int onediarray[rows*cols];
+    
+ printf("Enter values for array: \n");
+ 
+ for (a=0;a<rows;a++){
+     for (b=0;b<cols;b++){
+         scanf("%d", &array[a][b]);
+ }
+ }
+
+
+
+
+printf("Here is the value for your 2d arrays:\n");
+
+ for (a=0;a<rows;a++){
+     for (b=0;b<cols;b++){
+         printf("%d ", array[a][b]);
+         printf("\t");
+ }
+    printf("\n");
+ }
+    
+ for (a=0;a<rows;a++){
+     for (b=0;b<cols;b++){
+         onediarray[c++] = array[a][b];
+     }
+ }
+ 
+ 
+ 
+ printf("Here is your 1d Array:\n");
+ for (a=0;a<(rows*cols); a++){
+     printf("%d ", onediarray[a]);
+ }
+         
+         
+    return 0;
+}
