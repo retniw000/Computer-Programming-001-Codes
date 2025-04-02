@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+    int input,a,b,n,target;
+   
+
+    printf("Enter size for array: ");
+    scanf("%d", &n);
+     int *array = malloc(n* sizeof(int));
+    printf("\n");
+    printf("Enter values for your array: ");
+
+    for (a = 0; a < n; a++){
+        scanf("%d", &array[a]);
+    }
+
+printf("Enter target: ");
+scanf("%d", &target);
+
+
+for (a =0;a<n;a++){
+    for (b=0; b<n;b++){
+        if (target == array[a]+array[b]){
+            printf("[%d, %d]",a,b);
+            return 0;
+        }
+    }
+}
+
+return 0;
+}
