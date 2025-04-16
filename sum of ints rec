@@ -1,0 +1,28 @@
+#include <stdio.h>
+int sumd(int n1){
+   
+  if (n1 == 1) {return n1;}
+  
+  else return n1+ sumd(n1-1);
+  
+  
+    
+   
+    
+    
+    
+}
+
+
+int main(){
+    int n1;
+    int sum;
+    printf("Enter the last number: ");
+    scanf("%d",&n1 );
+    sumd(n1);
+    
+    sum = sumd(n1);
+    printf("%d", sum);
+    
+    return 0;
+}
